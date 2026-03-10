@@ -1,6 +1,8 @@
 from ejercicio01 import normaliza_nombre
 import pytest
 
+
+# para ejecutar el test debes estar en la raíz del directorio test y ejecutar este coimando: pytest test_ejercicio01.py
 @pytest.mark.parametrize("nombre, esperado", [
     ('DaNIeL LUga', 'Daniel Luga'),
     ('Miguel ÁnGel ', 'Miguel Ángel'),
