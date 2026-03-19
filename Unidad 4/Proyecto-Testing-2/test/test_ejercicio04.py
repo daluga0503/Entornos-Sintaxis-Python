@@ -1,4 +1,4 @@
-from ejercicio04 import media_movil
+from src.ejercicio04 import media_movil
 import pytest
 
 def test_media_movil_k_2():

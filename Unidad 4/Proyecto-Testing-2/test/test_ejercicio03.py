@@ -1,4 +1,4 @@
-from ejercicio03 import agrupar_por_inicial
+from src.ejercicio03 import agrupar_por_inicial
 import pytest
 
 def test_agrupar_por_inicial_mantiene_orden_duplicados():

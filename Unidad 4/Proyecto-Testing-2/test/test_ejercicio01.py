@@ -1,4 +1,4 @@
-from ejercicio01 import normaliza_nombre
+from src.ejercicio01 import normaliza_nombre
 import pytest
 
 
@@ -14,7 +14,6 @@ def test_normaliza_nombres_mayusculas_minusculas_espacios(nombre, esperado):
 
 def test_normaliza_nombres_guines_entre_palabras():
     assert normaliza_nombre('Ana-María Quintero') == 'Ana-María Quintero'
-
 
 @pytest.mark.parametrize("valor", [
     10,

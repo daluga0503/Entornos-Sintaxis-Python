@@ -1,6 +1,4 @@
-# Si el formato no es correcto, devuelve `False` (no lanza excepciones).
-
-from ejercicio02 import validar_nif
+from src.ejercicio02 import validar_nif
 import pytest
 
 def test_validar_nif_string():
