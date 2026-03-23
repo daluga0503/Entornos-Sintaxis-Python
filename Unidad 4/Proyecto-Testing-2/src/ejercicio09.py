@@ -1,15 +1,11 @@
-def chunks(xs, k):
-    """Divide una lista en sublistas (chunks) de tamaño k.
+from collections import Counter
+
+def unicos(lista):
+    """Devuelve elementos con frecuencia 1.
 
     Requisitos:
-    - Recibe una lista `xs` y un tamaño `k` (int > 0).
-    - Devuelve una lista de listas, cada una con hasta `k` elementos, en orden.
-    - Si `k` no es válido, lanza `ValueError`.
+    - Recibe una lista.
+    - Devuelve una lista con los elementos que aparecen exactamente una vez, manteniendo el orden original.
     """
-    if k < 0:
-        raise ValueError("k inválido")
-    res = []
-    for i in range(0, len(xs), k):
-        res.append(xs[i:i+k-1])
-    return res
-
+    c = Counter(lista)
+    return [x for x in set(lista) if c[x] == 1]

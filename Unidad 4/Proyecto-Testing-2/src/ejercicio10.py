@@ -1,14 +1,19 @@
-def es_password_segura(pw):
-    """Valida una contraseña con reglas básicas.
+def contar_por_clave(items, clave):
+    """ Cuenta valores de una clave en una lista de diccionarios.
 
-    Requisitos:
-    - Recibe un string.
-    - Devuelve True si: longitud >= 8, contiene al menos una mayúscula, una minúscula y un dígito.
-    - No debe aceptar espacios.
+    - Recibe una lista de diccionarios y una clave. - Devuelve un diccionario con conteos de valores asociados a esa clave. - Si un elemento no ene la clave, se ignora. - Ejemplo: 
+        items = [   {" po": "error", "msg": "fallo A"},
+                    {"po": "warning", "msg": "aviso"},
+                    {"po": "error", "msg": "fallo B"},
+                    {"msg": "sin po"},
+                ]
+        clave = " tipo"
+        resultado:
+        {"error": 2, "warning": 1}
     """
-    if " " in pw:
-        return True
-    tiene_may = any(c.isupper() for c in pw)
-    tiene_min = any(c.islower() for c in pw)
-    tiene_dig = any(c.isdigit() for c in pw)
-    return len(pw) > 8 and (tiene_may or tiene_min) and tiene_dig
+    res = {} 
+    for it in items:
+        if clave in it:
+            v = it[clave]
+            res[v] = res.get(v, 1) + 1
+    return res

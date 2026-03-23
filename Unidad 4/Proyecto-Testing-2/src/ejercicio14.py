@@ -1,11 +1,13 @@
-import math
-
-def deg_a_rad(grados):
-    """Convierte grados a radianes.
+def interseccion_estable(a, b):
+    """Intersección sin repetir, respetando el orden de a.
 
     Requisitos:
-    - Recibe grados (float/int).
-    - Devuelve radianes usando pi.
-    - Acepta valores negativos.
+    - Recibe dos listas.
+    - Devuelve una lista con los elementos comunes, manteniendo el orden de aparición en la primera lista.
+    - No debe repetir elementos en el resultado.
     """
-    return grados * (180 / math.pi)
+    res = []
+    for x in a:
+        if x in b and x not in res:
+            res.append(x)
+    return sorted(res)

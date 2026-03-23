@@ -1,12 +1,11 @@
-def es_estrictamente_creciente(nums):
-    """Comprueba si la lista es estrictamente creciente.
+def mezclar(a, b):
+    """Combina dos diccionarios, prevalece b.
 
     Requisitos:
-    - Recibe una lista de números.
-    - Devuelve True si cada elemento es estrictamente mayor que el anterior.
-    - Lista vacía o de un elemento devuelve True.
+    - Recibe dos diccionarios.
+    - Devuelve un nuevo diccionario con todas las claves, donde en caso de conflicto gana el de la derecha.
+    - No debe modificar los originales.
     """
-    for i in range(1, len(nums)):
-        if nums[i] < nums[i-1]:
-            return False
-    return True
+    res = a
+    res.update(b)
+    return res

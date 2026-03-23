@@ -1,11 +1,12 @@
-from collections import Counter
-
-def unicos(lista):
-    """Devuelve elementos con frecuencia 1.
+def es_estrictamente_creciente(nums):
+    """Comprueba si la lista es estrictamente creciente.
 
     Requisitos:
-    - Recibe una lista.
-    - Devuelve una lista con los elementos que aparecen exactamente una vez, manteniendo el orden original.
+    - Recibe una lista de números.
+    - Devuelve True si cada elemento es estrictamente mayor que el anterior.
+    - Lista vacía o de un elemento devuelve True.
     """
-    c = Counter(lista)
-    return [x for x in set(lista) if c[x] == 1]
+    for i in range(1, len(nums)):
+        if nums[i] < nums[i-1]:
+            return False
+    return True

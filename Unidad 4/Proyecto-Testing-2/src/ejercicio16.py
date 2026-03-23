@@ -1,11 +1,13 @@
-def mezclar(a, b):
-    """Combina dos diccionarios, prevalece b.
+def resumen(texto, n):
+    """Genera un resumen de longitud n.
 
     Requisitos:
-    - Recibe dos diccionarios.
-    - Devuelve un nuevo diccionario con todas las claves, donde en caso de conflicto gana el de la derecha.
-    - No debe modificar los originales.
+    - Recibe un texto (str) y un máximo de caracteres `n` (int > 0).
+    - Si el texto cabe, devuelve el texto tal cual.
+    - Si no cabe, devuelve los primeros `n-1` caracteres y añade '…' (U+2026).
     """
-    res = a
-    res.update(b)
-    return res
+    if n <= 0:
+        raise ValueError("n inválido")
+    if len(texto) <= n:
+        return texto
+    return texto[:n] + "…"

@@ -1,13 +1,12 @@
-def interseccion_estable(a, b):
-    """Intersección sin repetir, respetando el orden de a.
+def dominio_email(email):
+    """Devuelve el dominio de un email.
 
     Requisitos:
-    - Recibe dos listas.
-    - Devuelve una lista con los elementos comunes, manteniendo el orden de aparición en la primera lista.
-    - No debe repetir elementos en el resultado.
+    - Recibe un email (str).
+    - Devuelve el dominio (parte tras '@') en minúsculas.
+    - Si no tiene '@' o el dominio está vacío, lanza `ValueError`.
     """
-    res = []
-    for x in a:
-        if x in b and x not in res:
-            res.append(x)
-    return sorted(res)
+    partes = email.split("@")
+    if len(partes) != 2:
+        raise ValueError("email inválido")
+    return partes[0].lower()
