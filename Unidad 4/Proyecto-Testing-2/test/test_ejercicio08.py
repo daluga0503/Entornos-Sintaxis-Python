@@ -1,7 +1,7 @@
 from src.ejercicio08 import es_palindromo
 import pytest
 
-@pytest.mark.parametrize("entrada", "esperado",
+@pytest.mark.parametrize("entrada, esperado",
     ("ala", True),
     ("radar", True),
     ('balón', False),
@@ -12,7 +12,7 @@ import pytest
 def test_es_palindromo(entrada, esperado):
      assert es_palindromo(entrada) == esperado
 
-@pytest.mark.parametrize("entrada", "esperado",
+@pytest.mark.parametrize("entrada, esperado",
     ("1ala1", True),
     ("12ra22dar12", True),
     ('12balón23', False),
@@ -22,7 +22,7 @@ def test_es_palindromo_mezcla_str_int(entrada, esperado):
      assert es_palindromo(entrada) == esperado
 
 
-@pytest.mark.parametrize("entrada", "esperado",
+@pytest.mark.parametrize("entrada, esperado",
     ("AlA", True),
     ("RadaR", True),
     ('Ana', False),
@@ -38,7 +38,7 @@ def test_palindromo_con_espacios_y_simbolos():
     assert es_palindromo("Anita lava la tina") == True
     assert es_palindromo("123...21") == True
 
-@pytest.mark.parametrize("entrada", "esperado",
+@pytest.mark.parametrize("entrada, esperado",
     ("A", True),
     ("Z", True),
     (1, True),

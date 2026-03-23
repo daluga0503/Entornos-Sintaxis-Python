@@ -10,7 +10,7 @@ import pytest
 # dist_manhattan(p1, p2) -> |10-7| + |-2-5| = 3 + 7 = 10
 # Si el formato no es correcto, debe lanzar `ValueError`.
 
-@pytest.mark.parametrize("entrada1", "entrada2","esperado", 
+@pytest.mark.parametrize("entrada1, entrada2, esperado", 
     ([10, -2], [7, 5], 10),
     ((10, -2), (7, 5), 10),
     ((10, -2), [7, 5], 10)
